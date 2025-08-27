@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <video
+        id="video"
+        class="background"
+        src="./assets/video/Angel_bg2.mp4"
+        muted
+        playsinline
+        autoplay
+        loop
+      ></video>
+      <!-- <img src="./assets/images/slides/slide2.webp" alt="фон"> -->
+      <div class="shadow"></div>
+
+      <header class="header">
+        <div class="header-wrapper">
+          <div>
+            <button class="header-burger" title="меню"></button>
+            <a class="header-review" href="#">
+              <img src="./assets/images/yandex.svg" alt="яндекс" />
+              <div>
+                <span class="header-review-rating"> Рейтинг · 4.9 </span>
+                <span class="header-review-quantity"> 135 отзывов </span>
+              </div>
+            </a>
+            <span class="header-description"
+              >Салон красоты премиального <br />
+              уровня в Ставрополе</span
+            >
+          </div>
+          <img
+            class="header-logo"
+            src="./assets/images/logo.png"
+            alt="angel concept logo"
+          />
+          <div>
+            <div>
+              <div class="header-contacts-wrapper">
+                <a class="header-social" href="">
+                  <img src="./assets/icons/whatsapp.svg" alt="whatsapp" />
+                </a>
+                <a class="header-social" href="">
+                  <img src="./assets/icons/telegram.svg" alt="telegram" />
+                </a>
+              </div>
+              <div class="header-contacts">
+                <a class="header-phone" href="tel:+79100044636"
+                  >+7 910 004-46-36</a
+                >
+                <span class="header-schedule">Пн–ВС, с 10:00–22:00</span>
+              </div>
+            </div>
+            <button class="header-booking">
+              Запись на прием
+              <div class="header-booking-image">
+                <img src="./assets/icons/arrow.svg" alt="запись" />
+              </div>
+            </button>
+          </div>
+        </div>
+        <nav>
+          <ul class="header-nav-list">
+            <li class="header-nav-item">
+              <select name="" id="">
+                <option value="Все услуги">Все услуги</option>
+              </select>
+            </li>
+            <li class="header-nav-item">О центре</li>
+            <li class="header-nav-item">Косметология</li>
+            <li class="header-nav-item">SPA & Thai</li>
+            <li class="header-nav-item">велнесс-терапия</li>
+            <li class="header-nav-item">SPA & Релакс</li>
+            <li class="header-nav-item">коррекция фигуры</li>
+            <li class="header-nav-item">Журнал</li>
+            <li class="header-nav-item">Сертификаты</li>
+            <li class="header-nav-item">Контакты</li>
+          </ul>
+        </nav>
+      </header>
+      <main class="main">
+        <section class="hero">
+          <div class="hero-info">
+            <a class="hero-review" href="#">
+              <img src="./assets/images/yandex.svg" alt="яндекс" />
+              <div>
+                <span class="hero-review-rating"> Рейтинг · 4.9 </span>
+                <span class="hero-review-quantity"> 135 отзывов </span>
+              </div>
+            </a>
+            <h1 class="hero-title active-title">
+              Ангел Concept — <br />центр премиального ухода и косметологии
+              в Ставрополе
+            </h1>
+            <h1 class="hero-title">Косметология: уходы, инъекции, лифтинг</h1>
+            <h1 class="hero-title">Коррекция фигуры и силуэта</h1>
+            <h1 class="hero-title">SPA и европейские массажи</h1>
+            <h1 class="hero-title">Велнес-программы и флоатация</h1>
+            <h1 class="hero-title">Beauty-услуги: волосы, ногти, макияж</h1>
+            <h1 class="hero-title">Тайские и балийские массажи</h1>
+            <img class="hero-line" src="./assets/icons/line.svg" alt="" />
+            <span class="hero-descr">
+              Место, где вы выбираете заботу о себе как стиль жизни. Эстетично,
+              профессионально и легко
+            </span>
+            <button class="hero-button">
+              Подробнее об услугах
+              <div class="hero-button-image">
+                <img src="./assets/icons/arrow-gold.svg" alt="" />
+              </div>
+            </button>
+          </div>
+          <div class="slider">
+            <div class="slide active-slide">
+              <div class="slide-content">
+                <div class="slide-info">
+                  <span class="slide-number">1</span>
+                  <span class="slide-text"
+                    >Центр премиального ухода и косметологии
+                  </span>
+                </div>
+                <img
+                  class="slide-image"
+                  src="./assets/images/slides/slide1.webp"
+                  alt="Фото салона"
+                />
+              </div>
+              <div class="slide-progressbar">
+                <div class="timeline"></div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slide-content">
+                <div class="slide-info">
+                  <span class="slide-number">2</span>
+                  <span class="slide-text"
+                    >Косметология: уходы, инъекции, лифтинг
+                  </span>
+                </div>
+                <img
+                  class="slide-image"
+                  src="./assets/images/slides/slide2.webp"
+                  alt="Фото салона"
+                />
+              </div>
+              <div class="slide-progressbar">
+                <div class="timeline"></div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slide-content">
+                <div class="slide-info">
+                  <span class="slide-number">3</span>
+                  <span class="slide-text">Коррекция фигуры и силуэта</span>
+                </div>
+                <img
+                  class="slide-image"
+                  src="./assets/images/slides/slide3.webp"
+                  alt="Фото салона"
+                />
+              </div>
+              <div class="slide-progressbar">
+                <div class="timeline"></div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slide-content">
+                <div class="slide-info">
+                  <span class="slide-number">4</span>
+                  <span class="slide-text">SPA и европейские массажи</span>
+                </div>
+                <img
+                  class="slide-image"
+                  src="./assets/images/slides/slide4.webp"
+                  alt="Фото салона"
+                />
+              </div>
+              <div class="slide-progressbar">
+                <div class="timeline"></div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slide-content">
+                <div class="slide-info">
+                  <span class="slide-number">5</span>
+                  <span class="slide-text">Велнес-программы и флоатация</span>
+                </div>
+                <img
+                  class="slide-image"
+                  src="./assets/images/slides/slide5.webp"
+                  alt="Фото салона"
+                />
+              </div>
+              <div class="slide-progressbar">
+                <div class="timeline"></div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slide-content">
+                <div class="slide-info">
+                  <span class="slide-number">6</span>
+                  <span class="slide-text"
+                    >Beauty-услуги: волосы, ногти, макияж</span
+                  >
+                </div>
+                <img
+                  class="slide-image"
+                  src="./assets/images/slides/slide6.webp"
+                  alt="Фото салона"
+                />
+              </div>
+              <div class="slide-progressbar">
+                <div class="timeline"></div>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slide-content">
+                <div class="slide-info">
+                  <span class="slide-number">7</span>
+                  <span class="slide-text">Тайские и балийские массажи</span>
+                </div>
+                <img
+                  class="slide-image"
+                  src="./assets/images/slides/slide7.webp"
+                  alt="Фото салона"
+                />
+              </div>
+              <div class="slide-progressbar">
+                <div class="timeline"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

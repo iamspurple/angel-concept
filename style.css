@@ -1,0 +1,682 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: 0;
+  list-style: none;
+  border: none;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Golos";
+  src: url("./assets/fonts/GolosText-Medium.woff2"), format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kyiv";
+  src: url("./assets/fonts/KyivTypeSans-Medium.woff2"), format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kyiv";
+  src: url("./assets/fonts/KyivTypeSans-Regular.woff2"), format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "GTE";
+  src: url("./assets/fonts/GTEestiProText-Light.woff2"), format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --border-light: 1px solid rgba(255, 255, 255, 0.12);
+  --border-gold: 1px solid rgba(213, 175, 98, 0.6);
+  --gradient: linear-gradient(rgba(212, 178, 111, 1), rgba(168, 124, 37, 1));
+  font-size: 10px;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: brightness(50%);
+  max-height: 820px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  transition: background-image 0.4s ease;
+  background-size: cover;
+  background-position: center;
+}
+
+.shadow {
+  position: absolute;
+  z-index: -100;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  max-height: 820px;
+  background-color: rgba(30, 30, 30, 0.56);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100vw;
+  min-height: 100%;
+  width: 100vw;
+  height: auto;
+  z-index: -1000;
+  transform: translateX(-50%) translateY(-50%);
+  max-height: 820px;
+  object-fit: cover;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  padding: 20px 40px 0 40px;
+  max-width: 1440px;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 1rem;
+  border-bottom: var(--border-light);
+}
+
+.header-wrapper div {
+  display: flex;
+  gap: 1.8rem;
+  align-items: center;
+}
+
+.header-burger {
+  display: none;
+  background: url(./assets/icons/burger.svg) center/contain no-repeat;
+}
+
+.header-review,
+.hero-review {
+  font-family: "Kyiv";
+  display: flex;
+  gap: 1rem;
+  background-color: rgba(240, 231, 223, 0.12);
+  border: var(--border-light);
+  border-radius: 34px;
+  padding: 4px 15px 4px 2px;
+  transition: 0.2s;
+}
+
+@media (any-hover: hover) {
+  .header-review:hover {
+    background-color: rgba(240, 231, 223, 0.45);
+    cursor: pointer;
+  }
+}
+
+.header-review-rating,
+.hero-review-rating {
+  font-size: 1.4rem;
+  color: white;
+  font-weight: 500;
+}
+
+.header-review-quantity,
+.hero-review-quantity {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.header-review img,
+.hero-review img {
+  width: 40px;
+  aspect-ratio: 1;
+}
+
+.header-review div,
+.hero-review div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.hero-review {
+  display: none;
+}
+
+.header-description {
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Kyiv";
+  font-weight: 400;
+}
+
+.header-logo {
+  width: 90px;
+  height: 68px;
+}
+
+.header-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  aspect-ratio: 1;
+  border: var(--border-light);
+  border-radius: 100%;
+  background-color: rgba(240, 231, 223, 0.12);
+  transition: 0.2s;
+}
+
+@media (any-hover: hover) {
+  .header-social:hover {
+    background-color: rgba(240, 231, 223, 0.45);
+    cursor: pointer;
+  }
+}
+
+.header .header-contacts {
+  flex-direction: column;
+  gap: 2px;
+  justify-content: center;
+  color: white;
+  font-family: "Kyiv";
+}
+
+.header-phone {
+  color: white;
+  font-weight: 500;
+  font-size: 1.4rem;
+}
+
+.header-schedule {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.header-booking {
+  color: black;
+  background-color: white;
+  text-transform: uppercase;
+  display: flex;
+  border-radius: 34px;
+  padding: 0.8rem 1.2rem;
+  align-items: center;
+  gap: 1.5rem;
+  font-family: "Golos";
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+@media (any-hover: hover) {
+  .header-booking:hover {
+    background-color: rgba(255, 255, 255, 0.688);
+  }
+}
+
+.header-booking-image {
+  width: 24px;
+  aspect-ratio: 1;
+  background: var(--gradient);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.header-nav-list {
+  font-size: 1.3rem;
+  padding: 0 0.7rem 1rem 0.7rem;
+  border-bottom: var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Kyiv";
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.header-nav-item select {
+  background-color: transparent;
+  color: white;
+  font-family: "Kyiv";
+  font-weight: 500;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@media (any-hover: hover) {
+  .header-nav-item:hover {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.main {
+  max-width: 1440px;
+  width: 100%;
+}
+
+.hero {
+  padding: 20px 40px 40px 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem;
+}
+
+.hero-info {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  max-width: 860px;
+  width: fit-content;
+}
+
+.hero-title {
+  color: white;
+  font-family: "GTE";
+  font-size: 0rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.active-title {
+  font-size: 6rem;
+  opacity: 1;
+}
+
+.hero-line {
+  margin-right: 2rem;
+  align-self: flex-end;
+  width: 17.8rem;
+  height: auto;
+}
+
+.hero-descr {
+  font-family: "Kyiv";
+  font-weight: 400;
+  color: white;
+  max-width: 460px;
+  font-size: 1.8rem;
+}
+
+.hero-button {
+  margin-top: 30px;
+  background: var(--gradient);
+  color: white;
+  font-family: "Kyiv";
+  font-weight: 500;
+  max-width: 283px;
+  font-size: 1.4rem;
+  padding: 14px 20px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  gap: 7px;
+}
+
+@media (any-hover: hover) {
+  .hero-button:hover {
+    cursor: pointer;
+    background: linear-gradient(
+      rgba(212, 178, 111, 0.8),
+      rgba(168, 124, 37, 0.8)
+    );
+  }
+}
+
+.hero-button-image {
+  background-color: white;
+  border-radius: 100%;
+  width: 24px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  align-self: center;
+  max-width: 1200px;
+  gap: 5px;
+  display: flex;
+  justify-content: space-between;
+  transition: 0.5s;
+}
+
+.slide {
+  max-width: 144px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: 0.4s;
+}
+
+.active-slide {
+  max-width: 260px;
+}
+
+.slide-content {
+  width: 100%;
+  height: 138px;
+  gap: 1rem;
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  padding-right: 20px;
+  transition: 0.4s;
+}
+
+.active-slide .slide-content {
+  background-color: white;
+  padding-right: 4px;
+}
+
+.slide-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 18px 0 18px 18px;
+}
+
+.slide-number {
+  font-family: "Golos";
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 50%;
+  border: var(--border-light);
+  width: 32px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s;
+}
+
+.active-slide .slide-number {
+  color: black;
+  border: var(--border-gold);
+}
+
+.slide-text {
+  font-family: "Kyiv";
+  font-size: 1.2rem;
+  color: white;
+  font-weight: 400;
+  max-width: 100px;
+}
+
+.active-slide .slide-text {
+  color: black;
+}
+
+.slide-image {
+  align-self: center;
+  max-width: 124px;
+  max-height: 130px;
+  aspect-ratio: 1;
+  width: 0;
+  object-fit: cover;
+  border-radius: 16px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.active-slide .slide-image {
+  width: 100%;
+  opacity: 1;
+}
+
+.slide-progressbar {
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 1rem;
+}
+
+.timeline {
+  width: 0%;
+  height: 100%;
+  border-radius: 1rem;
+  transition: width 0.3s;
+}
+
+.active-slide .timeline {
+  width: 30%;
+  background-color: white;
+}
+
+@media screen and (max-width: 1366px) {
+  .header-nav-list {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(2, auto);
+    row-gap: 1rem;
+  }
+
+  .slide-info {
+    padding: 14px 0 14px 14px;
+  }
+
+  .slide-content {
+    max-height: 120px;
+  }
+
+  .slide-image {
+    max-width: 110px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .slider {
+    overflow-x: scroll;
+    width: calc(100vw - 40px);
+  }
+
+  .slide {
+    flex: 0 0 auto;
+    width: 140px;
+  }
+
+  .active-slide {
+    width: 205px;
+  }
+
+  .slide-number {
+    font-size: 1.2rem;
+  }
+
+  .slide-info {
+    font-size: 1rem;
+    padding: 10px 0 10px 10px;
+  }
+
+  .slide-content {
+    max-height: 120px;
+    gap: 0.5rem;
+  }
+
+  .slide-image {
+    max-width: 85px;
+    aspect-ratio: 3/4;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header-description,
+  .header-contacts,
+  .header-schedule,
+  .header-phone,
+  .header-booking,
+  .header-review {
+    display: none;
+  }
+
+  .active-title {
+    font-size: 4rem;
+  }
+
+  .header-nav-list {
+    font-size: 1rem;
+  }
+
+  .header-nav-item select {
+    font-size: 1rem;
+  }
+
+  .header-burger {
+    display: block;
+    width: 44px;
+    height: 36px;
+  }
+
+  .hero-review {
+    display: flex;
+    align-items: center;
+    max-width: fit-content;
+    margin-bottom: 1rem;
+    padding: 2px 5px 2px 40px;
+    height: 36px;
+    position: relative;
+  }
+
+  .hero-review div {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-review-rating {
+    padding-right: 1rem;
+    border-right: var(--border-light);
+  }
+
+  .hero-review img {
+    width: 36px;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 1px;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header-nav-list {
+    display: none;
+  }
+
+  .hero-descr {
+    font-size: 1.6rem;
+  }
+
+  .hero-button {
+    font-size: 1.2rem;
+    max-width: 240px;
+    padding: 10px 16px;
+  }
+
+  .header {
+    padding: 10px 20px 0 20px;
+  }
+
+  .header-logo {
+    width: 74px;
+    height: 56px;
+  }
+
+  .header-contacts-wrapper {
+    width: 80px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header-wrapper div {
+    gap: 0;
+  }
+
+  .header-social {
+    width: 32px;
+    aspect-ratio: 1;
+  }
+
+  .hero {
+    padding: 2rem 2rem;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .container {
+    height: 670px;
+    justify-content: space-between;
+  }
+
+  .hero {
+    height: 570px;
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .slide {
+    width: 45px;
+  }
+
+  .active-slide {
+    width: 45px;
+  }
+
+  .slide-content {
+    display: none;
+  }
+
+  .header-contacts-wrapper {
+    max-width: 70px;
+    display: flex;
+    gap: 0;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .active-title {
+    font-size: 3.2rem;
+  }
+}
