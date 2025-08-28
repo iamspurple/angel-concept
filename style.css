@@ -705,6 +705,12 @@ body {
 
   .hero-info {
     max-height: 480px;
+    justify-content: space-between;
+  }
+
+  .hero-button,
+  .hero-review {
+    margin: 0;
   }
 
   .slide {
