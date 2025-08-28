@@ -52,7 +52,6 @@ class Slider {
   }
 
   scrollToActiveSlide() {
-    console.log("Scrolling to slide:", this.activeIndex);
     const activeSlide = this.slides[this.activeIndex];
     const slider = this.slider;
 
@@ -112,15 +111,33 @@ class Slider {
   }
 
   resetProgressBar() {
-    const activeProgressBar =
-      this.slides[this.activeIndex].querySelector(".timeline");
-    activeProgressBar.style.transition = "none";
-    activeProgressBar.style.width = "0%";
+    if (this.width <= 425) {
+      this.slides.forEach((slide, index) => {
+        const progressBar = slide.querySelector(".timeline");
+        if (index < this.activeIndex) {
+          progressBar.style.width = "100%";
+          progressBar.style.transition = "none";
+        } else if (index === this.activeIndex) {
+          progressBar.style.width = "0%";
+          void progressBar.offsetWidth;
+          progressBar.style.transition = "width 6s linear";
+          progressBar.style.width = "100%";
+        } else {
+          progressBar.style.width = "0%";
+          progressBar.style.transition = "none";
+        }
+      });
+    } else {
+      const activeProgressBar =
+        this.slides[this.activeIndex].querySelector(".timeline");
+      activeProgressBar.style.transition = "none";
+      activeProgressBar.style.width = "0%";
 
-    void activeProgressBar.offsetWidth;
+      void activeProgressBar.offsetWidth;
 
-    activeProgressBar.style.transition = "width 6s linear";
-    activeProgressBar.style.width = "100%";
+      activeProgressBar.style.transition = "width 6s linear";
+      activeProgressBar.style.width = "100%";
+    }
   }
 
   nextSlide() {
@@ -144,7 +161,7 @@ class Slider {
 
     this.restartAutoSlide();
 
-    if (this.width < 1024) {
+    if (this.width <= 1024) {
       this.scrollToActiveSlide();
     }
   }
