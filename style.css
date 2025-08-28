@@ -705,12 +705,14 @@ body {
 
   .hero-info {
     max-height: 480px;
-    gap: 0.5rem;
   }
 
-  .hero-button,
   .hero-review {
-    margin: 0;
+    margin-bottom: 7px;
+  }
+
+  .hero-button {
+    margin-top: 10px;
   }
 
   .slide {
