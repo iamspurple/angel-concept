@@ -702,6 +702,10 @@ body {
     gap: 0;
   }
 
+  .hero-info {
+    max-height: 480px;
+  }
+
   .slide {
     width: 45px;
   }
