@@ -175,6 +175,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: flex-start;
   gap: 5px;
 }
 
@@ -252,6 +253,7 @@ body {
 @media (any-hover: hover) {
   .header-booking:hover {
     background-color: rgba(255, 255, 255, 0.688);
+    color: rgb(195, 145, 45);
   }
 }
 
